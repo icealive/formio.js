@@ -97,13 +97,6 @@ export default class LocationComponent extends BaseComponent {
           that.map.setCenter(place.geometry.location);
           that.map.setZoom(17);  // Why 17? Because it looks good.
         }
-        that.marker.setIcon(/** @type {google.maps.Icon} */({
-          url: place.icon,
-          size: new google.maps.Size(71, 71),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(35, 35)
-        }));
         that.marker.setPosition(place.geometry.location);
         that.marker.setVisible(true);
         that.setValue(place.name);
@@ -119,7 +112,7 @@ export default class LocationComponent extends BaseComponent {
 
   initGoogleMap() {
     Formio.libraryReady('googleMaps').then(() => {
-      const defaultLatlng = new google.maps.LatLng(45.5041482, -73.5574125);
+      const defaultLatlng = new google.maps.LatLng(13.7636036, 100.5122954);
       const options = {
         zoom: 19,
         center: defaultLatlng,
